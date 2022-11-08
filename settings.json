@@ -7,6 +7,19 @@
     "editor.bracketPairColorization.enabled": true,
     "editor.detectIndentation": false,
     "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "editor.guides.bracketPairs": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -79,4 +92,21 @@
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.panel.defaultLocation": "right",
+    "yaml.schemas": {
+      "file:///Users/massimoercolani/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.jira.jqlList": [
+      {
+        "id": "718e682a-e037-44c9-9e68-be09e5d58fbe",
+        "enabled": true,
+        "name": "My fovdev Issues",
+        "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+        "siteId": "89126748-3316-4b32-a825-1eeb2d9ca53d",
+        "monitor": true
+      }
+    ],
+    "git.autofetch": true,
+    "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{issueKey}}}-{{{summary}}}",
+    "redhat.telemetry.enabled": true,
+    "window.zoomLevel": 1,
 }

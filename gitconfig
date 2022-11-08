@@ -50,6 +50,7 @@
 
 [push]
   default = simple
+  autoSetupRemote = true
 
 [branch "master"]
   mergeoptions = --no-edit
@@ -62,3 +63,6 @@
 [user]
 	email = massimo.ercolani28@gmail.com
 	name = Massimo Ercolani
+
+[includeIf "gitdir:~/code/work/"]
+    path = ~/code/work/.gitconfig

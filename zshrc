@@ -9,6 +9,12 @@ plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting his
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
+# mac m1 specific issue - https://apple.stackexchange.com/a/413207
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# brew Shell Completion https://docs.brew.sh/Shell-Completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # Disable warning about insecure completion-dependent directories
 ZSH_DISABLE_COMPFIX=true
 
@@ -70,3 +76,15 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/massimoercolani/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/massimoercolani/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/massimoercolani/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/massimoercolani/google-cloud-sdk/completion.zsh.inc'; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gsed/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/gsed/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
